@@ -1,1 +1,1 @@
-{"marca":"PallMall","precioPaquete":"18","stock":"10000"}
+{"marca":"","precioPaquete":"","stock":""}

@@ -1,0 +1,1 @@
+[{"marca":"l","precioPaquete":"l","stock":"l"},{"marca":"sd","precioPaquete":"k","stock":"k"},{"marca":"sd","precioPaquete":"k","stock":"k"},{"marca":"sd","precioPaquete":"k","stock":"k"},{"marca":"sd","precioPaquete":"k","stock":"k"}]
