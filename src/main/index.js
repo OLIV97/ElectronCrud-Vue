@@ -4,7 +4,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import ProductoController from './controller/producto-controller'
 const productoController =  new ProductoController();
-
+import path from 'path'
 
 function createWindow() {
   // Create the browser window.
@@ -14,7 +14,8 @@ function createWindow() {
     show: false,
     autoHideMenuBar: true,
     
-    ...(process.platform === 'linux' ? { icon } : {}),
+  
+    icon:path.join(__dirname,'assets','icon.icon'),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false
