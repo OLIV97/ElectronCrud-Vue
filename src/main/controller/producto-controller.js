@@ -99,5 +99,11 @@ export default class ProductoController{
     
     }
 
+    async get(){
+        const info = await fs.promises.readFile("./products/products.txt","utf-8");
+        const dataJson = JSON.parse(info);
+        console.log(dataJson)
+        return dataJson;
+    }
 
 }

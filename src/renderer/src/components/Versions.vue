@@ -1,6 +1,5 @@
 
 <template>
-  
   <div class="flex justify-center items-center h-screen">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
@@ -26,13 +25,15 @@
           <button v-on:click="logInputValue" id="btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
            Guardar
           </button>
+         
           
         </div>
       </form>
     </div>
 </template>
-<script >
+<script>
 export default {
+  
   data() {
     return {
       inputMarca: '',
@@ -48,16 +49,17 @@ export default {
 
       const e ={
         marca: this.inputMarca,
-    precioPaquete: this.precioPaquete ,
-    stock: this.stock
-   }
+        precioPaquete: this.precioPaquete,
+        stock: this.stock
+      }
 
-  
-    window.CRUD.post(e);
-    }
-
+      window.CRUD.post(e);
+    },
+    async troll ()  {
+      const respuesta = await window.CRUD.get()
+      console.log(respuesta)
     
+}
   }
 }
-
 </script>

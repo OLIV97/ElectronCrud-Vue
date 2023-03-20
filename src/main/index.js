@@ -3,6 +3,8 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import ProductoController from './controller/producto-controller'
+const productoController =  new ProductoController();
+
 
 function createWindow() {
   // Create the browser window.
@@ -11,6 +13,7 @@ function createWindow() {
     height: 670,
     show: false,
     autoHideMenuBar: true,
+    
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -37,7 +40,7 @@ function createWindow() {
 
 
 
-
+  mainWindow.webContents.send('update-counter', 1);
 
 }
 
@@ -65,6 +68,10 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+
+  ipcMain.on('counter-value', (_event, value) => {
+    console.log(value) // will print value to Node console
+  })
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -78,8 +85,18 @@ app.on('window-all-closed', () => {
 
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
-
-
+ 
 //Crud de los productos
-const productoController =  new ProductoController();
 ipcMain.on('post',productoController.post )
+
+/*
+
+ipcMain.on('saludo', (event, arg) => {
+  // Imprimimos el argumento que recibimos
+  console.log(arg) // "Hola desde el renderer"
+  // Enviamos un mensaje al preload con el evento 'respuesta'
+  event.reply('respuesta', 'Hola desde el main')
+})
+*/
+
+

@@ -1,1 +1,1 @@
-[{"marca":"l","precioPaquete":"l","stock":"l"},{"marca":"sd","precioPaquete":"k","stock":"k"},{"marca":"sd","precioPaquete":"k","stock":"k"},{"marca":"sd","precioPaquete":"k","stock":"k"},{"marca":"sd","precioPaquete":"k","stock":"k"}]
+[{"marca":"la madre","precioPaquete":"0","stock":"0"},{"marca":"Constanza","precioPaquete":"tu hija","stock":"0"},{"marca":"Agregar ","precioPaquete":"w","stock":"w"},{"marca":"Lo malo es que ","precioPaquete":"es una linea","stock":"infinita"},{"marca":"la madre","precioPaquete":"constanza animal","stock":"0"}]
